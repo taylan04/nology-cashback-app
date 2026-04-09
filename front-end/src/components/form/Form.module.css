@@ -1,0 +1,84 @@
+.Container {
+    padding: 20px;
+    box-shadow: var(--color-shadow) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 15px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.Container > header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Container > header > h1 {
+    font-size: 25px;
+}
+
+.Container > header > img {
+    width: 50px;
+    border-radius: 13px;
+}
+
+.Container > .Formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Container > .Formulario > input {
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+                var(--color-input-border) 0px 0px 0px 1px;
+    padding: 13px;
+    color: var(--color-text);
+}
+
+.Container > .Formulario > .TipoCliente {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Container > .Formulario > .TipoCliente > label {
+    font-weight: 200;
+    color: var(--color-text);
+}
+
+.Container > .Formulario > .TipoCliente > select {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+.Container > button {
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-button-bg);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+                var(--color-input-border) 0px 0px 0px 1px;
+    padding: 5px 7px;
+    color: var(--color-button-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.DetalheBotao {
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DetalheBotao > .iconeBotao {
+    color: var(--color-detail-bg);
+}
