@@ -35,8 +35,7 @@
     border-radius: 10px;
     border: none;
     background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-                var(--color-input-border) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, var(--color-input-border) 0px 0px 0px 1px;
     padding: 13px;
     color: var(--color-text);
 }
@@ -61,8 +60,7 @@
     border-radius: 8px;
     border: none;
     background-color: var(--color-button-bg);
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-                var(--color-input-border) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, var(--color-input-border) 0px 0px 0px 1px;
     padding: 5px 7px;
     color: var(--color-button-text);
     display: flex;
