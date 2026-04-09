@@ -1,0 +1,15 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align-last: center;
+    height: 100vh;
+    gap: 50px;
+}
+
+@media (min-width: 990px) {
+    .Container {
+        flex-direction: row;
+    }
+}

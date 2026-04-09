@@ -16,6 +16,7 @@
   --color-input-border: rgba(27, 31, 35, 0.15);
   --color-shadow: rgba(100, 100, 111, 0.2);
 
+  --color-hover: #161616b4;
   --color-button-bg: #161616;
   --color-button-text: #ffffff;
 
@@ -31,6 +32,7 @@
     --color-input-border: rgba(148, 163, 184, 0.3);
     --color-shadow: rgba(0, 0, 0, 0.5);
 
+    --color-hover: #ffffff42;
     --color-button-bg: #f1f5f9; 
     --color-button-text: #161616;
 

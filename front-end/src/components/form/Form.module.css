@@ -67,6 +67,12 @@
     align-items: center;
     justify-content: space-between;
     font-weight: 500;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.Container > button:hover {
+    box-shadow: var(--color-hover) 0px 0px 13px 0px;
 }
 
 .DetalheBotao {
@@ -79,4 +85,8 @@
 
 .DetalheBotao > .iconeBotao {
     color: var(--color-detail-bg);
+}
+
+@media (min-width: 990px) {
+
 }

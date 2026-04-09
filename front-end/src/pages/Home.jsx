@@ -1,5 +1,6 @@
 import Historico from "../components/historico/Historico"
 import Form from "../components/form/Form"
+import styles from './Home.module.css'
 
 export default function Home() {
 
@@ -47,9 +48,9 @@ export default function Home() {
     ];
 
     return (
-        <>
-        <Form />
-        <Historico historico={historicoMock} />
-        </>
+        <div className={styles.Container}>
+            <Form />
+            <Historico historico={historicoMock} />
+        </div>
     )
 }
