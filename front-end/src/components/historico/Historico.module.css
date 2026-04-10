@@ -5,6 +5,7 @@
   max-height: 300px;
   border: 1px solid rgba(255, 255, 255, 0.373);
   border-radius: 10px;
+  text-align-last: center;
 }
 
 .TableWrapper::-webkit-scrollbar {

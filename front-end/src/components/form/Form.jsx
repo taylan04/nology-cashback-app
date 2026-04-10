@@ -59,7 +59,7 @@ export default function Form({ atualizarHistorico }) {
                 <input type="number" className={styles.InputCompra} value={valor} onChange={(e) => setValor(Number(e.target.value))} placeholder="Informa o valor da compra" />
                 <input type="number" className={styles.InputDesconto} value={desconto} onChange={(e) => setDesconto(Number(e.target.value))} placeholder="Desconto (%)" />
             </main>
-            <button onClick={calcular}>Calcular cashback <span className={styles.DetalheBotao}><FaArrowRightLong className={styles.iconeBotao} /></span></button>
+            <button onClick={calcular}>Calcular<span className={styles.DetalheBotao}><FaArrowRightLong className={styles.iconeBotao} /></span></button>
         </div>
     )
 }
