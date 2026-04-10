@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
-from app.schemas import CashbackRequest, CashbackResponse, HistoricoResponse
+from app.schemas.cashback_request import CashbackRequest
+from app.schemas.cashback_response import CashbackResponse
+from app.schemas.historico_response import HistoricoResponse
 from app.services.cashback_service import calcular_cashback
 from app.repositories.historico_repository import salvar_consulta, buscar_por_ip
 from app.database.connection import get_db
