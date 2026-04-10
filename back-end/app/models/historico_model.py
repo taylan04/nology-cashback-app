@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy import Column, Integer, String, Numeric, DateTime
 from sqlalchemy.orm import declarative_base
 from datetime import datetime
 
@@ -10,9 +10,9 @@ class Historico(Base):
     id = Column(Integer, primary_key = True, index = True)
     ip = Column(String)
     tipo_cliente = Column(String)
-    valor = Column(Float)
-    desconto = Column(Float)
-    cashback = Column(Float)
+    valor = Column(Numeric(10, 2))
+    desconto = Column(Numeric(5, 2))
+    cashback = Column(Numeric(10, 2))
     data_criacao = Column(DateTime, default = datetime.now)
 
     def __str__(self):
