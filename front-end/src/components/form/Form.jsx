@@ -33,6 +33,10 @@ export default function Form({ atualizarHistorico }) {
 
         const response = await calcularCashback(dados)
 
+        if (!response) {
+            return alert("Não foi possível calcular o cashback. Tente novamente.")
+        }
+
         setCashback(response.cashback)
 
         atualizarHistorico()

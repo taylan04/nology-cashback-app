@@ -13,6 +13,7 @@ router = APIRouter()
 
 # esse response model é pra definir qual vai ser o formato da resposta do endpoint
 # depends chama get_db() do conexão automaticamente, é coisa do fastAPI, todo mundo usa 
+
 @router.post("/cashback", response_model=CashbackResponse)
 def calcular_cashback_route(dados: CashbackRequest,request: Request,db: Session = Depends(get_db)):
     

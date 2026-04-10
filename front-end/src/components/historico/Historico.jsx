@@ -22,8 +22,8 @@ export default function Historico({historico}) {
                     </tr>
                 </thead>
                 <tbody className={styles.CorpoTabela}>
-                    {historico.map((item, index) => (
-                    <tr className={styles.celula} key={index}>
+                    {historico.map((item) => (
+                    <tr className={styles.celula} key={item.id}>
                         <td>{item.tipo_cliente}</td>
                         <td>R$ {item.valor}</td>
                         <td>{item.desconto}%</td>
