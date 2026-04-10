@@ -1,16 +1,37 @@
 const url = "http://localhost:8000"
 
 export async function calcularCashback(dados) {
-  const response = await fetch(`${url}/cashback`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(dados)
-  })
+  try {
+    const response = await fetch(`${url}/cashback`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dados)
+    })
 
-  return response.json()
+    if (!response.ok) {
+      throw new Error("Erro ao calcular cashback")
+    }
+
+    return await response.json()
+
+  } catch (error) {
+    console.error(error)
+    return null
+  }
 }
 
 export async function buscarHistorico() {
-  const response = await fetch(`${url}/historico`)
-  return response.json()
+  try {
+    const response = await fetch(`${url}/historico`)
+
+    if (!response.ok) {
+      throw new Error("Erro ao buscar histórico")
+    }
+
+    return await response.json()
+
+  } catch (error) {
+    console.error(error)
+    return []
+  }
 }

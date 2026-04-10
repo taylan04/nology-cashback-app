@@ -72,7 +72,8 @@
 }
 
 .Container > button:hover {
-    box-shadow: var(--color-hover) 0px 0px 13px 0px;
+    box-shadow: var(--color-hover) 0px 0px 17px 0px;
+    cursor: pointer;
 }
 
 .DetalheBotao {

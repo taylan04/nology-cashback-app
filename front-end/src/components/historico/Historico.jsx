@@ -28,7 +28,7 @@ export default function Historico({historico}) {
                         <td>R$ {item.valor}</td>
                         <td>{item.desconto}%</td>
                         <td>R$ {item.cashback}</td>
-                        <td>{item.data}</td>
+                        <td>{new Date(item.data_criacao).toLocaleString("pt-BR")}</td>
                     </tr>
                     ))}
                 </tbody>

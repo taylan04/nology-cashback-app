@@ -2,6 +2,26 @@
   width: auto;
   max-width: 100%;
   overflow-x: auto;
+  max-height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.373);
+  border-radius: 10px;
+}
+
+.TableWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.TableWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.TableWrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 10px;
+}
+
+.TableWrapper::-webkit-scrollbar:horizontal {
+  height: 0px; 
 }
 
 .Tabela {
@@ -55,6 +75,8 @@
 }
 
 @media (min-width: 990px) {
-
+    .Tabela {
+        max-height: 300px;
+    }
 }
 
