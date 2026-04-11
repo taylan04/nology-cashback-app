@@ -1,10 +1,5 @@
-@font-face {
-    font-family: sora;
-    src: url(../../assets/fonts/Sora-VariableFont_wght.ttf);
-}
-
 * {
-    font-family: sora;
+    font-family: "Sora", system-ui, sans-serif;
     background-color: var(--color-background);
 }
 
