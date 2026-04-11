@@ -4,6 +4,12 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Logo from '../../assets/nology_logo.jpg'
 import { calcularCashback } from "../../services/api";
 
+function textoParaNumero(texto) {
+    const textoLimpo = texto.trim().replaceAll(" ", "").replaceAll(",", ".")
+    if (textoLimpo === "") return NaN
+    return Number(textoLimpo)
+}
+
 export default function Form({ atualizarHistorico }) {
 
     const [tipoCliente, setTipoCliente] = useState("NORMAL");
@@ -13,37 +19,33 @@ export default function Form({ atualizarHistorico }) {
 
     async function calcular() {
 
-        if (desconto <= 0 || valor <= 0) {
-            setValor("")
-            setDesconto("")
-            return alert("Insira valores maiores que zero.")
-        }
+        const valorCompra = textoParaNumero(valor)
+        const descontoPercentual = textoParaNumero(desconto)
 
-        if (desconto > 100) {
-            setValor("")
-            setDesconto("")
-            return alert("Desconto não pode ser maior que 100%.")
-        } 
+        const formularioOk = valorCompra > 0 && descontoPercentual > 0 && descontoPercentual <= 100
+        
+        if (!formularioOk) {
+            return alert("Preencha valor da compra e desconto (máx. 100%) com números válidos.")
+        }
         
         const dados = {
-        valor: Number(valor),
-        desconto: Number(desconto),
+        valor: valorCompra,
+        desconto: descontoPercentual,
         tipo_cliente: tipoCliente
         }
 
-        const response = await calcularCashback(dados)
+        const resposta = await calcularCashback(dados)
 
-        if (!response) {
+        if (!resposta) {
             return alert("Não foi possível calcular o cashback. Tente novamente.")
         }
 
-        setCashback(response.cashback)
+        setCashback(resposta.cashback)
 
         atualizarHistorico()
 
         setValor("")
         setDesconto("")
-        
     }
 
     return (
@@ -60,8 +62,8 @@ export default function Form({ atualizarHistorico }) {
                     <option value="VIP">Cliente VIP</option>
                 </select>
                 </div>
-                <input type="number" className={styles.InputCompra} value={valor} onChange={(e) => setValor(Number(e.target.value))} placeholder="Informa o valor da compra" />
-                <input type="number" className={styles.InputDesconto} value={desconto} onChange={(e) => setDesconto(Number(e.target.value))} placeholder="Desconto (%)" />
+                <input type="text" inputMode="decimal" className={styles.InputCompra} value={valor} onChange={(e) => setValor(e.target.value)} placeholder="Valor da compra (ex.: 1000 ou 1000,50)" autoComplete="off" />
+                <input type="text" inputMode="decimal" className={styles.InputDesconto} value={desconto} onChange={(e) => setDesconto(e.target.value)} placeholder="Desconto % (ex.: 10 ou 10,5)" autoComplete="off" />
             </main>
             <button onClick={calcular}>Calcular<span className={styles.DetalheBotao}><FaArrowRightLong className={styles.iconeBotao} /></span></button>
         </div>
