@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './Form.module.css'
 import { FaArrowRightLong } from "react-icons/fa6";
-import Logo from '../../assets/nology_logo.jpg'
+import Logo from '../../assets/cashback.png'
 import { calcularCashback } from "../../services/api";
 
 function textoParaNumero(texto) {
